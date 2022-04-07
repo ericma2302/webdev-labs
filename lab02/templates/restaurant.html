@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"><title>Top Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+    <main>
+        <section>
+            <h2>{{restaurant.get('name')}}</h2>
+            <img src= "{{restaurant.get('image_url')}}" alt="Picture of Northwestern" />
+            <div id = "address">{{ restaurant.get('display_address') }}</div>
+            <div id = "yelp">
+                <div id = "indicator">
+                    <div class = "ind-indicator">
+                        Price:
+                    </div>
+                    <div class = "ind-indicator">
+                        Rating:
+                    </div>
+                    <div class = "ind-indicator">
+                        # Reviews:
+                    </div>
+                </div>
+                <div id = "stats">
+                    <div class = "ind-stat">
+                        {{ restaurant.get('price') }}
+                    </div>
+                    <div class = "ind-stat">
+                        {{ restaurant.get('rating') }}
+                    </div>
+                    <div class = "ind-stat">
+                        {{ restaurant.get('review_count') }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
